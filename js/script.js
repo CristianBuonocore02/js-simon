@@ -20,14 +20,21 @@
 
 
 
-const numberGenerate = []
-for (let i = 0; numberGenerate.length < 5; i++) {
+const numberGenerate = []// numberGenerate.length
+
+while (numberGenerate.length < 5) {
     const numberRamdom = Math.floor(Math.random() * 100) + 1;
 
     if (!numberGenerate.includes(numberRamdom)) {
         numberGenerate.push(numberRamdom)
     }
+
 }
+console.log(numberGenerate);
+
+
+// for (let i = 0; numberGenerate.length < 5; i++) {
+// }
 
 const number = document.getElementById("numbers-list")
 
@@ -36,3 +43,17 @@ for (let i = 0; i < numberGenerate.length; i++) {
     li.textContent = numberGenerate[i]
     number.appendChild(li)
 }
+
+const countdown = document.getElementById("countdown")
+let countDownValue = 5 // 5 secondi a scalare
+countdown.innerText = countDownValue
+
+const intervalId = setInterval(() => {
+    countDownValue -= 1
+    countdown.innerText = countDownValue
+
+    if (countDownValue === 0) {
+        clearInterval(intervalId)
+    }
+
+}, 1000);

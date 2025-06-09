@@ -47,7 +47,7 @@ for (let i = 0; i < numberGenerate.length; i++) {
 const countdown = document.getElementById("countdown")
 const input = document.getElementById("answers-form")
 
-let countDownValue = 10 // 30 secondi a scalare
+let countDownValue = 30 // 30 secondi a scalare
 countdown.innerText = countDownValue
 
 const intervalId = setInterval(() => {

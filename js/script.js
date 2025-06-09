@@ -45,7 +45,9 @@ for (let i = 0; i < numberGenerate.length; i++) {
 }
 
 const countdown = document.getElementById("countdown")
-let countDownValue = 5 // 5 secondi a scalare
+const input = document.getElementById("answers-form")
+
+let countDownValue = 10 // 30 secondi a scalare
 countdown.innerText = countDownValue
 
 const intervalId = setInterval(() => {
@@ -54,6 +56,10 @@ const intervalId = setInterval(() => {
 
     if (countDownValue === 0) {
         clearInterval(intervalId)
+        number.remove()
+        //dobbiamo far apparire al loro posto gli input
+        input.classList.remove("d-none")
     }
 
 }, 1000);
+
